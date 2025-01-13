@@ -10,11 +10,10 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService {
 
-
-
+    CarDao carDao = new CarDaoImpl();
+    
     @Override
     public List<Car> getCars(int count) {
-        CarDao carDao = new CarDaoImpl();
-        return carDao.getCars(count);
+        return carDao.getCarsByCount(count);
     }
 }
